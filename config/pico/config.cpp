@@ -24,34 +24,34 @@ size_t backend_count;
 KeyboardMode *current_kb_mode = nullptr;
 
 GpioButtonMapping button_mappings[] = {
-    { &InputState::l,           5 },
-    { &InputState::left,        4 },
-    { &InputState::down,        3 },
-    { &InputState::right,       2 },
+    {&InputState::l,            5 },
+    { &InputState::left,        21 },
+    { &InputState::down,        19 },
+    { &InputState::right,       18 },
     { &InputState::up2,         1 },
 
-    { &InputState::mod_x,       6 },
-    { &InputState::mod_y,       7 },
+    { &InputState::mod_x,       15 },
+    { &InputState::mod_y,       22 },
 
     { &InputState::select,      10},
     { &InputState::start,       0 },
     { &InputState::home,        11},
 
     { &InputState::c_left,      13},
-    { &InputState::c_up,        12},
-    { &InputState::c_down,      15},
-    { &InputState::a,           14},
-    { &InputState::c_right,     16},
+    { &InputState::c_up,        16},
+    { &InputState::c_down,      14},
+    { &InputState::a,           3},
+    { &InputState::c_right,     12},
 
-    { &InputState::b,           26},
-    { &InputState::x,           21},
-    { &InputState::z,           19},
-    { &InputState::up,          17},
+    { &InputState::b,           2},
+    { &InputState::x,           4},
+    { &InputState::z,           7},
+    { &InputState::up,          20},
 
-    { &InputState::r,           27},
-    { &InputState::y,           22},
-    { &InputState::lightshield, 20},
-    { &InputState::midshield,   18},
+    { &InputState::r,           6},
+    { &InputState::y,           26},
+    { &InputState::lightshield, 27},
+    { &InputState::midshield,   17},
 };
 size_t button_count = sizeof(button_mappings) / sizeof(GpioButtonMapping);
 
@@ -131,7 +131,7 @@ void setup() {
 
     // Default to Melee mode.
     primary_backend->SetGameMode(
-        new Melee20Button(socd::SOCD_2IP_NO_REAC, { .crouch_walk_os = false })
+        new Melee20Button(socd::SOCD_2IP_NO_REAC, { .crouch_walk_os = true })
     );
 }
 
